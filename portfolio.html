@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrigendra - Digital OS Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Lock Screen / Persona Picker -->
+    <div id="lockScreen" class="lock-screen active">
+        <div class="lock-screen-bg"></div>
+        <div class="lock-screen-content">
+            <div class="lock-screen-time">
+                <div class="time" id="lockTime">12:00</div>
+                <div class="date" id="lockDate">Monday, January 1</div>
+            </div>
+            <div class="persona-picker">
+                <h2>Choose Your Experience</h2>
+                <div class="persona-cards">
+                    <div class="persona-card" data-persona="recruiter" tabindex="0">
+                        <div class="persona-icon">👔</div>
+                        <h3>Recruiter</h3>
+                        <p>Admin Access</p>
+                        <span class="persona-desc">View resume and contact info</span>
+                    </div>
+                    <div class="persona-card" data-persona="developer" tabindex="0">
+                        <div class="persona-icon">💻</div>
+                        <h3>Developer</h3>
+                        <p>Power User</p>
+                        <span class="persona-desc">Explore projects and terminal</span>
+                    </div>
+                    <div class="persona-card" data-persona="guest" tabindex="0">
+                        <div class="persona-icon">👋</div>
+                        <h3>Guest</h3>
+                        <p>Casual</p>
+                        <span class="persona-desc">Learn about me</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="desktop">
+        <!-- Animated Background -->
+        <div class="desktop-bg">
+            <canvas id="particleCanvas"></canvas>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="resume" tabindex="0">
+                <div class="icon">📄</div>
+                <span>Resume</span>
+            </div>
+            <div class="desktop-icon" data-app="projects" tabindex="0">
+                <div class="icon">🚀</div>
+                <span>Projects</span>
+            </div>
+            <div class="desktop-icon" data-app="about" tabindex="0">
+                <div class="icon">👨‍💻</div>
+                <span>About</span>
+            </div>
+            <div class="desktop-icon" data-app="contact" tabindex="0">
+                <div class="icon">📧</div>
+                <span>Contact</span>
+            </div>
+            <div class="desktop-icon" data-app="blog" tabindex="0">
+                <div class="icon">📝</div>
+                <span>Blog</span>
+            </div>
+            <div class="desktop-icon" data-app="terminal" tabindex="0">
+                <div class="icon">⚡</div>
+                <span>Terminal</span>
+            </div>
+        </div>
+
+        <!-- Windows Container -->
+        <div id="windowsContainer" class="windows-container"></div>
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <button class="start-button" id="startButton" aria-label="Open launcher">
+                    <span class="start-icon">⚡</span>
+                </button>
+                <div class="running-apps" id="runningApps"></div>
+            </div>
+            <div class="taskbar-right">
+                <button class="system-button" id="themeToggle" aria-label="Toggle theme">🌙</button>
+                <button class="system-button" id="notificationsButton" aria-label="Notifications">
+                    🔔
+                    <span class="notification-badge" id="notificationBadge">0</span>
+                </button>
+                <!-- Added logout button to switch personas -->
+                <button class="system-button" id="logoutButton" aria-label="Switch User">👤</button>
+                <div class="system-time" id="systemTime">12:00 PM</div>
+            </div>
+        </div>
+
+        <!-- Launcher / Start Menu -->
+        <div class="launcher" id="launcher">
+            <div class="launcher-header">
+                <input type="text" class="launcher-search" id="launcherSearch" placeholder="Search apps...">
+            </div>
+            <div class="launcher-apps">
+                <div class="launcher-app" data-app="resume">
+                    <div class="launcher-icon">📄</div>
+                    <span>Resume</span>
+                </div>
+                <div class="launcher-app" data-app="projects">
+                    <div class="launcher-icon">🚀</div>
+                    <span>Projects</span>
+                </div>
+                <div class="launcher-app" data-app="about">
+                    <div class="launcher-icon">👨‍💻</div>
+                    <span>About</span>
+                </div>
+                <div class="launcher-app" data-app="contact">
+                    <div class="launcher-icon">📧</div>
+                    <span>Contact</span>
+                </div>
+                <div class="launcher-app" data-app="blog">
+                    <div class="launcher-icon">📝</div>
+                    <span>Blog</span>
+                </div>
+                <div class="launcher-app" data-app="terminal">
+                    <div class="launcher-icon">⚡</div>
+                    <span>Terminal</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications Container -->
+        <div class="notifications-container" id="notificationsContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
